@@ -201,7 +201,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
-  pg
+  pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rails (~> 5.2.2)
   sass-rails (~> 5.0)
@@ -216,4 +216,4 @@ RUBY VERSION
    ruby 2.6.1p33
 
 BUNDLED WITH
-   1.17.3
+   2.0.1
