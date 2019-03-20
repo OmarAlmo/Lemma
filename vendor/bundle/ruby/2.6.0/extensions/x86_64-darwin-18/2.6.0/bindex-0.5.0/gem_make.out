@@ -1,0 +1,15 @@
+current directory: /Users/omaralmo/Documents/Projects/Lemma/vendor/bundle/ruby/2.6.0/gems/bindex-0.5.0/ext/bindex
+/Users/omaralmo/.rvm/rubies/ruby-2.6.1/bin/ruby -I /Users/omaralmo/.rvm/rubies/ruby-2.6.1/lib/ruby/site_ruby/2.6.0 -r ./siteconf20190226-67667-7bwhi4.rb extconf.rb
+creating Makefile
+
+current directory: /Users/omaralmo/Documents/Projects/Lemma/vendor/bundle/ruby/2.6.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" clean
+
+current directory: /Users/omaralmo/Documents/Projects/Lemma/vendor/bundle/ruby/2.6.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR="
+compiling cruby.c
+linking shared-object bindex/cruby.bundle
+
+current directory: /Users/omaralmo/Documents/Projects/Lemma/vendor/bundle/ruby/2.6.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20190226-67667-1o7lubm/bindex
