@@ -15,7 +15,8 @@ body {
   color: #fff;
   font-family: Helvetica, serif;
   font-weight: 100;
-  background: url(""), url("/assets/home/adults-agreement-beverage-567633.jpg");
+  background: imgage-url("");
+  background: image-url("/assets/home/adults-agreement-beverage-567633.jpg");
   background-attachment: scroll, scroll;
   background-position: center;
   background-repeat: no-repeat;
