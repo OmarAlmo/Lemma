@@ -36,3 +36,7 @@ group :test do
 end
 
 #Additional gems:
+gem 'bootstrap-sass'
+gem 'devise'
+gem 'jquery-rails'
+gem 'popper_js'
