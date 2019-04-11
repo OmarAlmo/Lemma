@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.com/OmarAlmo/Lemma.svg?branch=development)](https://travis-ci.com/OmarAlmo/Lemma)
 # README
 
 This README would normally document whatever steps are necessary to get the
