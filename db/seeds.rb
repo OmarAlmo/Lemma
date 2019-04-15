@@ -9,20 +9,12 @@
 # Countries and Cities 
 require 'csv'
 
-puts "Importing countries..."
-CSV.foreach(Rails.root.join("app/assets/csv/countries.csv"), headers: true) do |row|
-  Country.create do |country|
-    country.name = row[0]
-  end
+puts "Importing countries and cities..."
+CSV.foreach(Rails.root.join("app/assets/csv/countries_and_cities.csv"), headers: true) do |row|
+  country = Country.find_or_create_by(name: row[0])
+  City.create(name: row[1], country: country)
 end
-puts "Importing countries completed."
 
-puts "Importing cities..."
-CSV.foreach(Rails.root.join("app/assets/csv/cities.csv"), headers: true) do |row|
-  City.create do |city|
-    city.name = row[0]
-  end
-end
-puts "Importing cities completed."
+puts "Importing countries and cities completed."
 
 

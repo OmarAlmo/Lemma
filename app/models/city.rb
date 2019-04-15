@@ -1,6 +1,3 @@
 class City < ApplicationRecord
-
-    def getCities
-        @cities = City.select(:name)
-    end
+  belongs_to :country
 end

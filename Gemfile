@@ -63,5 +63,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #My gems
 gem 'devise'
-gem 'uikit-rails'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
