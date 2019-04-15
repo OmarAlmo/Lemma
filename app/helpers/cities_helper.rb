@@ -1,7 +1,7 @@
 module CitiesHelper
 
     def cities
-        City.select(:name).pluck(:name, :id)
+        City.select(:name, :country_reference).pluck(:name, :id)
     end
     
 end
