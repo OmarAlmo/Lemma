@@ -1,5 +1,13 @@
 class RegistrationsController < Devise::RegistrationsController
 
+    prepend_before_action do
+        byebug
+    end
+
+
+    def create
+    end
+
     private 
 
         def sign_up_params
