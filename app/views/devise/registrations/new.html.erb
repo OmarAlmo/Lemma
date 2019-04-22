@@ -25,7 +25,8 @@
 
   <div class="field">
     <%= f.label :city %><br />
-    <%= f.grouped_collection_select :city_id, Country.order(:name), :cities, :name, :id, :name, {include_blank: true}, id:"user_city" %>
+    <%= f.grouped_collection_select :city_id, Country.order(:name), :cities, :name, :id, :name, 
+    {include_blank: true}, id:"user_city" %>
   </div>
 
   <div class="field">
