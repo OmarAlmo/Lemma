@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Countries and Cities 
+require 'csv'
+
+puts "Importing countries and cities..."
+CSV.foreach(Rails.root.join("app/assets/csv/countries_and_cities.csv"), headers: true) do |row|
+  country = Country.find_or_create_by(name: row[0])
+  City.create(name: row[1], country: country)
+end
+
+puts "Importing countries and cities completed."
+
+
