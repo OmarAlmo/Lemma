@@ -6,7 +6,7 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field uk-margin">
       <%= f.label :email %><br/>
-      <div class="uk-inline">
+    <div class="uk-inline">
       <span class="uk-form-icon" uk-icon="icon: user"></span>
       <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "uk-input" %>
     </div>  
@@ -14,8 +14,8 @@
 
   <div class="field uk-margin">
       <%= f.label :password %><br />
-      <div class="uk-inline">
-      <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+    <div class="uk-inline">
+      <span class="uk-form-icon" uk-icon="icon: lock"></span>
       <%= f.password_field :password, autocomplete: "current-password", :class => "uk-input" %>
     </div>
   </div>

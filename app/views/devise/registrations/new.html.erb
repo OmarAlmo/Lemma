@@ -1,45 +1,59 @@
+<div class="uk-position-center uk-overlay uk-overlay-default">
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
   
-  <div class="field">
-     <%= f.label :first_name %><br />
-     <%= f.text_field :first_name, autofocus: true %>
+  <div class="field uk-margin">
+    <%= f.label :first_name %><br />
+    <div class="uk-inline">
+     <span class="uk-form-icon" uk-icon="icon: user"></span>
+     <%= f.text_field :first_name, autofocus: true, :class => "uk-input"%>
+    </div>
   </div>
 
-  <div class="field">
+  <div class="field uk-margin">
      <%= f.label :last_name %><br />
-     <%= f.text_field :last_name, autofocus: true %>
+    <div class="uk-inline">
+     <span class="uk-form-icon" uk-icon="icon: user"></span>
+     <%= f.text_field :last_name, autofocus: true, :class => "uk-input" %>
+    </div>
   </div>
 
-  <div class="field">
+  <div class="field uk-margin">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <div class="uk-inline">
+      <span class="uk-form-icon" uk-icon="icon: mail"></span>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "uk-input" %>
+    </div>
   </div>
 
-  <div class="field">
+  <div class="field uk-margin">
     <%= f.label :country %><br />
-    <%= select "user", "country_id", countries, { include_blank: true },  id:"country_id"%>
+      <%= select "user", "country_id", countries, { include_blank: true },  id:"country_id", :class => "uk-inline uk-dropdown-nav"%>
   </div>
 
-  <div class="field">
+ <div class="field uk-margin">
     <%= f.label :city %><br />
-    <%= f.grouped_collection_select :city_id, Country.order(:name), :cities, :name, :id, :name, 
-    {include_blank: true}, id:"user_city" %>
+    <%= f.grouped_collection_select :city_id, Country.order(:name), :cities, :name, :id, :name, {include_blank: true}, id:"user_city", :class => "uk-inline uk-dropdown-nav" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
+  <div class="field uk-margin">
+    <%= f.label :password %><br/>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <div class="uk-inline">
+      <span class="uk-form-icon" uk-icon="icon: lock"></span>
+      <%= f.password_field :password, autocomplete: "new-password", :class => "uk-input" %>
+    </div>
   </div>
 
-  <div class="field">
+  <div class="field uk-margin">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <div class="uk-inline">
+    <span class="uk-form-icon" uk-icon="icon: lock"></span>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", :class => "uk-input" %>
   </div>
 
   <div class="actions">
@@ -48,3 +62,5 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+</div>
