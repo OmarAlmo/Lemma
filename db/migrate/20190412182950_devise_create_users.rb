@@ -10,6 +10,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.bigint :country_id, null: false
       t.bigint :city_id, null: false 
 
+      # User fields of interests IDs
+      t.bigint :field_of_interest, array: true
+      t.bigint :field_of_knowledge, array: true
+
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""

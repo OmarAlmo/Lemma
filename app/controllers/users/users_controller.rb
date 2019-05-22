@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  # # GET /users/1 || /users/1.json
+  # GET /users/1 || /users/1.json
   def show
   end
 
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   def edit
   end
 
-  # # PATCH/PUT /users/1 || users/1.json
+  # PATCH/PUT /users/1 || users/1.json
   def update
     respond_to do |format|
       if @user.update(user_params)
@@ -34,8 +34,8 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(
         :first_name, :last_name, :country_id, 
-        :city_id, :email, :password, 
-        :password_confirmation, :remember_me)
+        :city_id, :email, :category_id, :category_id, 
+        :password, :password_confirmation, :remember_me)
     end
 
     # Use callbacks to share common setup or constraints between actions.
