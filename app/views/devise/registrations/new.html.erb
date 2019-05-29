@@ -31,18 +31,19 @@
       <%= f.label :city %><br />
       <%= f.grouped_collection_select :city_id, Country.order(:name), :cities, :name, :id, :name, {include_blank: true}, id:"user_city", :class => "uk-inline uk-dropdown-nav" %>
     </div>
+    <br/>
     <div>
-      <%= f.label :field_of_interest, "Field of Interest"%><br/>
+      <%= f.label :field_of_interest%><br/>
       <% Category.all.each do |category| %>
-        <%= check_box_tag "field of interest", Category.ids.include?(category.id), false, id: dom_id(category) %>
-        <%= label_tag dom_id(category), category.name %><br>
+        <%= check_box_tag "user[category_ids][]", Category.ids.include?(category.id), false, id: dom_id(category) %>
+        <%= category.name %><br>
       <% end %>
     </div>
     <br/>
     <div>
-      <%= f.label :field_of_knowledge, "Field of Knowledge"%><br/>
+      <%= f.label :field_of_knowledge%><br/>
       <% Category.all.each do |category| %>
-        <%= check_box_tag "category[category_ids][]", Category.ids.include?(category.id), false, id: dom_id(category) %>
+        <%= check_box_tag "user[category_ids][]", Category.ids.include?(category.id), false, id: dom_id(category) %>
         <%= label_tag dom_id(category), category.name %><br>
       <% end %>
     </div>

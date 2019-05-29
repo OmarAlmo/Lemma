@@ -18,6 +18,6 @@ puts "Importing countries and cities completed."
 
 puts "Importing categories"
 CSV.foreach(Rails.root.join("app/assets/csv/categories.csv"), headers: true) do |row|
-  category = Category.create(name: row[0])
+  Category.create(name: row[0])
 end 
 puts "Importing categories completed."
