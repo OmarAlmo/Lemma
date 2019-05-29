@@ -35,7 +35,7 @@
     <div>
       <%= f.label :field_of_interest%><br/>
       <% Category.all.each do |category| %>
-        <%= check_box_tag "user[category_ids][]", Category.ids.include?(category.id), false, id: dom_id(category) %>
+        <%= check_box_tag "user[field_of_interest][]", Category.ids.include?(category.id), false, id: dom_id(category) %>
         <%= category.name %><br>
       <% end %>
     </div>
@@ -43,7 +43,7 @@
     <div>
       <%= f.label :field_of_knowledge%><br/>
       <% Category.all.each do |category| %>
-        <%= check_box_tag "user[category_ids][]", Category.ids.include?(category.id), false, id: dom_id(category) %>
+        <%= check_box_tag "user[field_of_knowledge][]", Category.ids.include?(category.id), false, id: dom_id(category) %>
         <%= label_tag dom_id(category), category.name %><br>
       <% end %>
     </div>
