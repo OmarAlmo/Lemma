@@ -15,6 +15,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @user = User.find(params[:id])
   end
 
   # PATCH/PUT /users/1 || users/1.json
@@ -42,6 +43,5 @@ class UsersController < ApplicationController
     def set_user
       @user = User.find(params[:id])
     end
-
 
 end
