@@ -6,15 +6,13 @@
     <link rel="stylesheet" type="text/css" href="maps.css">
   </head>
   <body>
+    <!-- Nav -->
     <nav class="uk-navbar-container uk-margin" uk-navbar>
       <div class="uk-navbar-left">
         <a class="uk-navbar-item uk-logo" href="#">Lemma</a>
         <ul class="uk-navbar-nav">
           <li>
-            <a href="#">
-              <span class="uk-icon uk-margin-small-right" uk-icon="icon: star"></span>
-              Features
-            </a>
+            <%= link_to "My Account", edit_user_registration_path %>
           </li>
         </ul>
         <div class="uk-navbar-item">
@@ -33,30 +31,22 @@
           <div id="offcanvas-reveal" uk-offcanvas="mode: reveal; overlay: true; flip: true">
             <div class="uk-offcanvas-bar">
               <button class="uk-offcanvas-close" type="button" uk-close></button>
-              <%= link_to "Sign out", destroy_user_session_path, :method => 'delete', :class=> "uk-button uk-button-default"%>
+              <%= link_to "Sign out", destroy_user_session_path, :method => 'delete', :class=> "uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom"%>
             </div>
           </div>
         </nav>
         <br>
-        <!--Users of interest -->
+        <!--Users of knowledge -->
         <div class="uk-container-large">
-        </div>
-        <!-- Map -->
-        <h2>My Map</h2>
-        <div id="map" class="map"></div>
-        <script type="text/javascript">
-          var map = new ol.Map({
-            target: 'map',
-            layers: [
-              new ol.layer.Tile({
-                source: new ol.source.OSM()
-              })
-            ],
-            view: new ol.View({
-              center: ol.proj.fromLonLat([37.41, 8.82]),
-              zoom: 4
-            })
-          });
-        </script>
-      </body>
-    </html>
+          <% @users = User.all %>
+          <% @users.each do |user| %>
+            <%= user.first_name%>
+            <%= user.last_name %>
+            <%= user.field_of_knowledge.each do |f|%>
+              <%= f %>
+            <% end %>
+          </br></br>
+      <% end %>
+    </div>
+  </body>
+</html>

@@ -64,3 +64,4 @@ end
 #Additional gems
 gem 'devise'
 gem 'jquery-rails'
+gem 'faker'

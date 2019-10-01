@@ -11,8 +11,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.bigint :city_id, null: false 
 
       # User fields of interests IDs
-      t.bigint :field_of_interest, array: true 
-      t.bigint :field_of_knowledge, array: true
+      # t.bigint :field_of_interest_ids, array: true 
+      # t.bigint :field_of_knowledge_ids, array: true
+
+      add_refernce :users, :categories, array: true, foreign_key: true
 
       ## Database authenticatable
       t.string :email,              null: false, default: ""
