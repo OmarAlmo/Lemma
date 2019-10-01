@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root 'static_pages#index'
 
-  devise_for :users, controller: {registrations: "registrations"}
+  devise_for :users, controller: {registrations: "users#registrations", confirmations: "confirmations"}
+  default_url_options :host => 'static_pages#index'
   
   get 'dashboard' => 'dashboard#dashboard'
   

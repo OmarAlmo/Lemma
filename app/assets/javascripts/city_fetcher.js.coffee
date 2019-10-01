@@ -11,3 +11,4 @@ $  ->
        else
            $('#user_city').empty();
            $('#user_city').parent().hide();    
+$(document).on('turbolinks:load', ready)

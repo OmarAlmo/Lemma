@@ -7,8 +7,12 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       # User info
       t.string :first_name,  null: false
       t.string :last_name, null: false
-      t.string :country, null:false
-      t.string :city,  null: false
+      t.bigint :country_id, null: false
+      t.bigint :city_id, null: false 
+
+      # User fields of interests IDs
+      t.bigint :field_of_interest, array: true 
+      t.bigint :field_of_knowledge, array: true
 
       ## Database authenticatable
       t.string :email,              null: false, default: ""
@@ -29,16 +33,15 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       # t.inet     :last_sign_in_ip
 
       ## Confirmable
-      # t.string   :confirmation_token
-      # t.datetime :confirmed_at
-      # t.datetime :confirmation_sent_at
-      # t.string   :unconfirmed_email # Only if using reconfirmable
+      t.string   :confirmation_token
+      t.datetime :confirmed_at
+      t.datetime :confirmation_sent_at
+      t.string   :unconfirmed_email # Only if using reconfirmable
 
       ## Lockable
-      # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
-      # t.string   :unlock_token # Only if unlock strategy is :email or :both
-      # t.datetime :locked_at
-
+      t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
+      t.string   :unlock_token # Only if unlock strategy is :email or :both
+      t.datetime :locked_at
 
       t.timestamps null: false
     end

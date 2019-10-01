@@ -14,7 +14,10 @@ CSV.foreach(Rails.root.join("app/assets/csv/countries_and_cities.csv"), headers:
   country = Country.find_or_create_by(name: row[0])
   City.create(name: row[1], country: country)
 end
-
 puts "Importing countries and cities completed."
 
-
+puts "Importing categories"
+CSV.foreach(Rails.root.join("app/assets/csv/categories.csv"), headers: true) do |row|
+  Category.create(name: row[0])
+end 
+puts "Importing categories completed."
